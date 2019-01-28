@@ -62,6 +62,8 @@ public class Accounts extends UserDateAudit {
     @Size(max = 25)
     private String category;
     
+    
+    
     @Column(columnDefinition = "text")
     @Size(max=25)
     private String websiteAddress;
@@ -115,10 +117,26 @@ public class Accounts extends UserDateAudit {
     private String email2;
     
     @Column(columnDefinition = "text")
-    @Size(min = 10, max = 1000)
+    @Size(max = 1000)
     private String description;
     
-    @JoinTable(name = "accounts_requirements", 
+    @Column(columnDefinition = "text")
+    @Size(max = 25)
+    private String technology;
+    
+    @Column(columnDefinition = "text")
+    @Size(max = 25)
+    private String positionType;
+    
+    public String getPositionType() {
+		return positionType;
+	}
+
+	public void setPositionType(String positionType) {
+		this.positionType = positionType;
+	}
+
+	@JoinTable(name = "accounts_requirements", 
     		joinColumns={@JoinColumn(name="accounts_id", referencedColumnName="id")},
             inverseJoinColumns={@JoinColumn(name="requirements_id", referencedColumnName="id")})
     @OneToMany(cascade = { CascadeType.ALL })
@@ -284,5 +302,13 @@ public class Accounts extends UserDateAudit {
 
 	public void setRequirements(List<Requirements> requirements) {
 		this.requirements = requirements;
+	}
+
+	public String getTechnology() {
+		return technology;
+	}
+
+	public void setTechnology(String technology) {
+		this.technology = technology;
 	}
 }

@@ -18,11 +18,10 @@ import javax.persistence.TableGenerator;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.synergy.recupro.model.audit.UserDateAudit;
 
 @Entity
 @Table(name = "candidate")
-public class Candidate extends UserDateAudit {
+public class Candidate extends Contact {
 
 	
 	/**
@@ -40,40 +39,6 @@ public class Candidate extends UserDateAudit {
 	  initialValue = 1000,
 	  allocationSize = 10)
       private Long candidateId;
-   
-	@Column(columnDefinition = "text")
-	private String firstName;
-
-	@Column(columnDefinition = "text")
-	private String middleName;
-	
-	@Column(columnDefinition = "text")
-	private String lastName;
-	
-	@Column(columnDefinition = "text")
-	private String emailAddress;
-	
-	@Column(columnDefinition = "text")
-	private String mobileNumber;
-
-	@Column(columnDefinition = "text")
-	private String phoneNumber;
-	
-	@Column(columnDefinition = "text")
-    @Size(max = 75)
-    private String country;
-    
-    @Column(columnDefinition = "text")
-    @Size(max = 75)
-    private String state;
-    
-    @Column(columnDefinition = "text")
-    @Size(max = 75)
-    private String city;
-   
-    @Column(columnDefinition = "text")
-    @Size(max = 75)
-    private String address;
     
     @Column(columnDefinition = "text")
     @Size(max = 75)
@@ -82,15 +47,6 @@ public class Candidate extends UserDateAudit {
     @Column(columnDefinition = "text")
     @Size(max = 75)
     private String preferredLocation2;
-    
-    @Column(columnDefinition = "int")
-    private int zipCode;
-    
-    @Column(columnDefinition = "text")
-    private String skypeId;
-    
-	@Column(columnDefinition = "text")
-	private String linkedinUrl;
 	
 	@Column(columnDefinition = "text")
 	private String sourceFrom;
@@ -110,8 +66,7 @@ public class Candidate extends UserDateAudit {
 	@Column(columnDefinition = "text")
 	private String noticePeriod;
 
-    @Column(columnDefinition = "int" )
-    private int fax;	   
+      
 
     @Column(columnDefinition = "text" )
     private int licenseNumber;
@@ -125,8 +80,7 @@ public class Candidate extends UserDateAudit {
     @Column(columnDefinition = "text" )
     private int dateOfBirth;
     
-    @Column(columnDefinition = "text" )
-    private int candidateStatus;
+    
     
     @Column(columnDefinition = "text")
     private int gender;
@@ -171,85 +125,7 @@ public class Candidate extends UserDateAudit {
 		this.candidateId = candidateId;
 	}
 
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getMiddleName() {
-		return middleName;
-	}
-
-	public void setMiddleName(String middleName) {
-		this.middleName = middleName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getEmailAddress() {
-		return emailAddress;
-	}
-
-	public void setEmailAddress(String emailAddress) {
-		this.emailAddress = emailAddress;
-	}
-
-	public String getMobileNumber() {
-		return mobileNumber;
-	}
-
-	public void setMobileNumber(String mobileNumber) {
-		this.mobileNumber = mobileNumber;
-	}
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
+	
 
 	public String getPreferredLocation1() {
 		return preferredLocation1;
@@ -266,33 +142,6 @@ public class Candidate extends UserDateAudit {
 	public void setPreferredLocation2(String preferredLocation2) {
 		this.preferredLocation2 = preferredLocation2;
 	}
-
-	public int getZipCode() {
-		return zipCode;
-	}
-
-	public void setZipCode(int zipCode) {
-		this.zipCode = zipCode;
-	}
-
-	
-
-	public String getSkypeId() {
-		return skypeId;
-	}
-
-	public void setSkypeId(String skypeId) {
-		this.skypeId = skypeId;
-	}
-
-	public String getLinkedinUrl() {
-		return linkedinUrl;
-	}
-
-	public void setLinkedinUrl(String linkedinUrl) {
-		this.linkedinUrl = linkedinUrl;
-	}
-
 	public String getSourceFrom() {
 		return sourceFrom;
 	}
@@ -340,15 +189,6 @@ public class Candidate extends UserDateAudit {
 	public void setNoticePeriod(String noticePeriod) {
 		this.noticePeriod = noticePeriod;
 	}
-
-	public int getFax() {
-		return fax;
-	}
-
-	public void setFax(int fax) {
-		this.fax = fax;
-	}
-
 	public int getLicenseNumber() {
 		return licenseNumber;
 	}
@@ -380,15 +220,6 @@ public class Candidate extends UserDateAudit {
 	public void setDateOfBirth(int dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
-
-	public int getCandidateStatus() {
-		return candidateStatus;
-	}
-
-	public void setCandidateStatus(int candidateStatus) {
-		this.candidateStatus = candidateStatus;
-	}
-
 	public int getGender() {
 		return gender;
 	}

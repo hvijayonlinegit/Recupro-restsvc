@@ -42,7 +42,8 @@ public class Document extends UserDateAudit {
 	
 	@JoinColumn(name = "candidateid", nullable = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
-	   @JsonIgnoreProperties("candidate")
+	//comment this as this is throwing canidate_id null exception
+//	   @JsonIgnoreProperties("candidate")
 	private Candidate candidate;
 	
 	@Column(name = "documentname")

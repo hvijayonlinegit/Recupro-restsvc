@@ -30,7 +30,7 @@ import com.synergy.recupro.model.audit.DateAudit;
             "email"
         })
 })
-public class User extends DateAudit {
+public class User extends Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

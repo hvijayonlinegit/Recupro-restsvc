@@ -71,7 +71,7 @@ public class UserController {
 		return userProfile;
 	}
 
-	//@PreAuthorize("hasAnyRole('ADMIN','RECRUITMENT_LEAD','BDM','TEAM','ACCOUNT_MANAGER')")
+	@PreAuthorize("hasAnyRole('ADMIN','RECRUITMENT_LEAD','BDM','TEAM','ACCOUNT_MANAGER')")
 	@PutMapping("/users/{username}/role/{roleid}")
 	public ResponseEntity<?> updateRole(@PathVariable String username,
 			@PathVariable Long roleid) {
